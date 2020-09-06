@@ -139,3 +139,5 @@ cython_debug/
 
 #Config
 code/twitter-config.json
+
+.vscode
