@@ -1,5 +1,6 @@
-import json, tweepy, os
+import tweepy, os
 from datetime import datetime, timedelta
+import localenv
 
 def get_api():
 
@@ -30,13 +31,17 @@ def run_delete(delete_from_date=False,exclude_favourited=True):
         if status.created_at <= delete_from_date_formatted:
             if exclude_favourited:    
                 if not status.favorited:
+                    print("The following tweet will be deleted:")
                     print("Tweet text: {}".format(status.text))
                     print("Tweet created: {}".format(status.created_at))
                     api.destroy_status(status.id)
+                    print("Tweet deleted \n")
             else:
+                print("The following tweet will be deleted:")
                 print("Tweet text: {}".format(status.text))
                 print("Tweet created: {}".format(status.created_at))
                 api.destroy_status(status.id)
+                print("Tweet deleted \n")
 
 if __name__ == "__main__":
     run_delete()

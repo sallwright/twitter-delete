@@ -1,3 +1,4 @@
+import json, os
 with open("code/twitter-config.json") as f:
     config = json.load(f)
 
