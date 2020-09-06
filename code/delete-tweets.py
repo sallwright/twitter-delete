@@ -43,4 +43,4 @@ def run_delete(delete_from_date=False,exclude_favourited=True):
                     api.destroy_status(status.id)
 
 if __name__ == "__main__":
-    run_delete()
+    run_delete("2017-01-01")
