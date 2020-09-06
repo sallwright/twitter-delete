@@ -1,6 +1,5 @@
 import tweepy, os
 from datetime import datetime, timedelta
-import localenv
 
 def get_api():
 
