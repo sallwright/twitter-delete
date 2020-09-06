@@ -32,15 +32,11 @@ def run_delete(delete_from_date=False,exclude_favourited=True):
                 if not status.favorited:
                     print("Tweet text: {}".format(status.text))
                     print("Tweet created: {}".format(status.created_at))
-                    delete_confirmation = input("Do you want to delete this tweet? Y/N ")
-                    if delete_confirmation.lower() == 'y':
-                        api.destroy_status(status.id)
+                    api.destroy_status(status.id)
             else:
                 print("Tweet text: {}".format(status.text))
                 print("Tweet created: {}".format(status.created_at))
-                delete_confirmation = input("Do you want to delete this tweet? Y/N ")
-                if delete_confirmation.lower() == 'y':
-                    api.destroy_status(status.id)
+                api.destroy_status(status.id)
 
 if __name__ == "__main__":
     run_delete("2017-01-01")
